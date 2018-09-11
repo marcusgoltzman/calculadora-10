@@ -1,4 +1,4 @@
-def calc(n1, n2, op):
+def calculadora(n1, n2, op):
 	if op == '+':
 		return n1 + n2
 	elif op == '-':
@@ -12,5 +12,5 @@ def calc(n1, n2, op):
 			return n1/n2
 #print(calc(4,2,'/'))
 
-def test_calc():
+def testando_calc():
 	assert calc(4,2,'+') == 6
