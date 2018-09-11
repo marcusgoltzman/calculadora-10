@@ -1,11 +1,13 @@
 language: python
 python:
-  - "3.5.2"
-  - "3.5-dev"  # 3.5 development branch
-  - "3.7-dev"  # 3.7 development branch
-# command to install dependencies
+  - "2.7"
+  - "3.5"
+  - "3.6"
 install: 
-  - pip install pytest
-# command to run tests
-script:
-  - pytest
+  - pip install -r requirements.txt
+  - pip install coveralls
+script: 
+  - py.test -v -r f --cov=.  --cov-report=html
+  #- coverage run --source=home manage.py test home
+after_success:
+  - coveralls
